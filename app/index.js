@@ -1,3 +1,7 @@
-import createTableCells from "./gameOfLife/createCell.js";
+import Universe from "./Universe/Universe.js";
 
-console.table(createTableCells(2, 2));
+const world = new Universe(3, 3);
+
+world.cells[1][1].isAlive = false;
+
+console.table(world.cells.map((row) => row.map((cell) => cell.isAlive)));
